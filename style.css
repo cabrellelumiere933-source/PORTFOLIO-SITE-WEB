@@ -1,0 +1,121 @@
+/* --- CONFIGURATION DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f0f13; /* Couleur de fond sombre */
+    color: #ffffff; /* Texte en blanc */
+    overflow-x: hidden;
+}
+
+/* --- LE MENU (NAVIGATION) --- */
+header {
+    position: fixed; /* Reste toujours en haut */
+    top: 0;
+    width: 100%;
+    /* Effet Glassmorphism (Verre transparent) */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00f3ff; /* Bleu Néon */
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #cccccc;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00f3ff;
+}
+
+/* Bouton de Connexion dans le menu */
+.btn-login {
+    background: transparent;
+    border: 1px solid #00f3ff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #00f3ff !important;
+}
+
+.btn-login:hover {
+    background: #00f3ff;
+    color: #0f0f13 !important;
+    box-shadow: 0 0 15px #00f3ff; /* Effet lumière */
+}
+
+/* --- SECTION ACCUEIL (HERO) --- */
+#hero {
+    height: 100vh; /* Prend 100% de la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at center, #1a1a24 0%, #0f0f13 100%);
+}
+
+#hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #00f3ff, #b000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero p {
+    font-size: 18px;
+    color: #a0a0a0;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Bouton principal de la page */
+.btn-primary {
+    background: #b000ff; /* Violet Néon */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(176, 0, 255, 0.4);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.8);
+    transform: translateY(-3px); /* Le bouton monte un peu au survol */
+}
