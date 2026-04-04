@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabrelle - Portfolio & Boutique</title>
+        <!-- Bibliothèque de logos pour les développeurs (Devicon) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,11 +24,125 @@
         </nav>
     </header>
 
-    <!-- Section Accueil -->
+       <!-- ========================================== -->
+    <!-- SECTION ACCUEIL (Spectaculaire & Holographique) -->
+    <!-- ========================================== -->
     <section id="hero">
-        <h1>Bienvenue dans mon Univers</h1>
-        <p>Développeur, Créatrice, écrivaine et Vendeuse de solutions innovantes.</p>
-        <button class="btn-primary">Découvrir mes produits</button>
+        <!-- La lumière qui va suivre la souris ! -->
+        <div id="hero-spotlight"></div>
+
+        <!-- Le panneau central en verre -->
+        <div class="hero-content">
+            <!-- Le titre avec l'effet Glitch (le texte doit être écrit deux fois : une fois normal, une fois dans data-text) -->
+            <h1 class="glitch" data-text="Cabrelle.Dev">Cabrelle.Dev</h1>
+            
+            <!-- Le texte qui s'écrit tout seul via JavaScript -->
+            <h2 class="hero-subtitle">Je suis <span id="typing-text"></span><span class="cursor">|</span></h2>
+            
+            <p class="hero-description">
+                Bienvenue dans mon univers. Ici, le code rencontre la poésie, et les idées se transforment en produits réels.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#shop" class="btn-primary">Explorer ma Boutique 🛍️</a>
+                <!-- Un deuxième bouton avec un style néon transparent -->
+                <a href="#about" class="btn-secondary">Découvrir mon Histoire 🚀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SECTION À PROPOS (La Créatrice d'Univers)  -->
+    <!-- ========================================== -->
+    <section id="about">
+        <!-- C'est ici que le JS va créer les bulles magiques -->
+        <div id="bubbles-container"></div>
+
+        <div class="about-wrapper">
+            <!-- La Photo et son anneau d'énergie -->
+            <div class="about-image-container">
+                <!-- L'anneau qui va changer de couleur -->
+                <div id="glow-ring"></div>
+                <!-- Ta photo (Tu pourras remplacer le lien par ta vraie photo) -->
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=400" alt="Photo de Cabrelle" id="profile-pic">
+            </div>
+
+            <!-- Le Texte et les Badges -->
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">Qui est Cabrelle ?</h2>
+                
+                <!-- Les Badges Interactifs -->
+                <div class="badges">
+                    <span class="badge" data-color="#00f3ff">🎓 Étudiante 3e Année</span>
+                    <span class="badge" data-color="#b000ff">✍️ Écrivaine</span>
+                    <span class="badge" data-color="#F7DF1E">💻 Développeuse</span>
+                    <span class="badge" data-color="#ff007f">🛍️ Entrepreneuse</span>
+                </div>
+
+                <p>
+                    Je ne rentre pas dans une seule case, <strong>je les construis</strong>. Actuellement étudiante en troisième année de baccalauréat, mon esprit bouillonne d'idées que je transforme sans cesse en réalité.
+                </p>
+                <p>
+                    Quand je ne suis pas en train de forger des mondes avec ma plume en tant qu'écrivaine, je sculpte le web avec du code ou je gère ma boutique d'innovations. Mon moteur ? La passion de m'investir à 100% dans tout ce qui m'anime. Je code, j'écris, je vends, et surtout... <strong>je crée.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+        <!-- ========================================== -->
+    <!-- SECTION COMPÉTENCES (Arsenal Technologique) -->
+    <!-- ========================================== -->
+    <section id="skills">
+        <h2 class="section-title">Mon Arsenal Technologique</h2>
+        <p class="section-subtitle">Les outils que je maîtrise pour forger des solutions innovantes.</p>
+        
+        <div class="skills-grid">
+
+            <!-- Carte 1 : HTML / CSS -->
+            <div class="skill-card" style="--clr: #2965f1;">
+                <div class="skill-icon">
+                    <i class="devicon-css3-plain"></i>
+                </div>
+                <h3>HTML & CSS</h3>
+                <p>Sculpture et design d'interfaces luminescentes et modernes.</p>
+            </div>
+
+            <!-- Carte 2 : JAVASCRIPT -->
+            <div class="skill-card" style="--clr: #F7DF1E;">
+                <div class="skill-icon">
+                    <i class="devicon-javascript-plain"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p>L'étincelle magique qui donne vie et interactivité à mes projets web.</p>
+            </div>
+
+            <!-- Carte 3 : C# -->
+            <div class="skill-card" style="--clr: #9b4993;">
+                <div class="skill-icon">
+                    <i class="devicon-csharp-plain"></i>
+                </div>
+                <h3>C# (.NET)</h3>
+                <p>L'architecture robuste et orientée objet derrière mes logiques logicielles.</p>
+            </div>
+
+            <!-- Carte 4 : SQL -->
+            <div class="skill-card" style="--clr: #f29111;">
+                <div class="skill-icon">
+                    <i class="devicon-mysql-plain"></i>
+                </div>
+                <h3>SQL</h3>
+                <p>Maîtrise des données : structuration et requêtes intelligentes.</p>
+            </div>
+
+            <!-- Carte 5 : SQL SERVER -->
+            <div class="skill-card" style="--clr: #cc292b;">
+                <div class="skill-icon">
+                    <i class="devicon-microsoftsqlserver-plain"></i>
+                </div>
+                <h3>SQL Server</h3>
+                <p>Gestion sécurisée et optimisation des bases de données relationnelles.</p>
+            </div>
+
+        </div>
     </section>
 
     <!-- On ajoutera la boutique, les vidéos et la musique ici plus tard -->
