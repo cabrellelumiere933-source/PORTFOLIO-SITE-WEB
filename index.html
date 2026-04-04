@@ -16,6 +16,7 @@
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#skills">Compétences</a></li>
                 <li><a href="#shop">Ma Boutique</a></li>
+                  <li><a href="#music">Musique</a></li>
                 <li><a href="#login" class="btn-login">Connexion</a></li>
             </ul>
         </nav>
@@ -69,7 +70,33 @@
                     <button class="btn-buy">Ajouter au panier</button>
                 </div>
             </div>
+            <!-- PRODUIT 4 : UN AUTRE ROMAN -->
+            <div class="product-card">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=600" alt="Livre 2" class="product-img">
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop class="product-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                </div>
+                <div class="product-info">
+                    <h3>Roman : Le Secret</h3>
+                    <p class="price">12,50 €</p>
+                    <a href="https://www.amazon.fr/ton-livre-2" target="_blank">
+                        <button class="btn-buy">Acheter sur Amazon</button>
+                    </a>
+                </div>
+            </div>
 
+            <!-- PRODUIT 5 : PERRUQUE BOUCLÉE -->
+            <div class="product-card">
+                <div class="media-container">
+                    <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?q=80&w=600" alt="Perruque Bouclée" class="product-img">
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop class="product-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                </div>
+                <div class="product-info">
+                    <h3>Perruque Bouclée</h3>
+                    <p class="price">150,00 €</p>
+                    <button class="btn-buy">Ajouter au panier</button>
+                </div>
+            </div>
             <!-- PRODUIT 3 : VÊTEMENTS -->
             <div class="product-card">
                 <div class="media-container">
@@ -87,6 +114,61 @@
 
         </div>
     </section>
+
+        <!-- ========================================== -->
+    <!-- LECTEUR DE MUSIQUE FLOTTANT (Créatif !)    -->
+   <!-- ========================================== -->
+<!-- LECTEUR DE MUSIQUE AVEC PLAYLIST           -->
+<!-- ========================================== -->
+<div id="floating-player">
+    <!-- ✨ NOUVEAU : La pochette de l'album (qui tourne) -->
+    <div class="disk-cover">
+        <img src="https://i.scdn.co/image/ab67616d0000b273d8a9d6251b63b1fda0ec9f7e" id="current-cover" alt="Pochette">
+    </div>
+
+    <!-- ✨ NOUVEAU : Infos sur la musique en cours -->
+    <div class="now-playing">
+        <h4 id="current-title">Cabrelle Radio 🎵</h4>
+        <p id="current-artist">Sélectionne une musique</p>
+    </div>
+
+    <!-- ✨ NOUVEAU : Les contrôles (Précédent/Suivant) -->
+    <div class="player-controls">
+        <button id="prev-btn">⏮️</button>
+        <button id="play-pause-btn">▶️ Play</button>
+        <button id="next-btn">⏭️</button>
+    </div>
+
+    <!-- ✨ NOUVEAU : La barre de volume -->
+    <div class="volume-container">
+        <span>🔉</span>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+        <span>🔊</span>
+    </div>
+
+    <!-- ✨ NOUVEAU : La playlist (liste des musiques) -->
+    <div class="playlist">
+        <ul id="playlist-songs">
+            <!-- Chaque musique est un <li> avec ses infos -->
+            <li data-src="couple.mp3" data-cover="https://i.scdn.co/image/ab67616d0000b273d8a9d6251b63b1fda0ec9f7e" data-title="Couple" data-artist="Cabrelle">
+                <span class="song-title">Couple</span>
+                <span class="song-artist">Cabrelle</span>
+            </li>
+            <!-- ✨ Tu peux ajouter d'autres musiques ici ! -->
+            <li data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" data-cover="https://i.scdn.co/image/ab67616d0000b2731b67b1b3c7b3d6b3e7d9b3e3" data-title="Summer Vibes" data-artist="DJ Sun">
+                <span class="song-title">Summer Vibes</span>
+                <span class="song-artist">DJ Sun</span>
+            </li>
+            <li data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" data-cover="https://i.scdn.co/image/ab67616d0000b273d8a9d6251b63b1fda0ec9f7e" data-title="Night Drive" data-artist="Moonlight">
+                <span class="song-title">Night Drive</span>
+                <span class="song-artist">Moonlight</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- L'élément audio (caché) -->
+    <audio id="site-music"></audio>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
