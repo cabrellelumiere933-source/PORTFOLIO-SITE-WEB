@@ -24,12 +24,69 @@
     <!-- Section Accueil -->
     <section id="hero">
         <h1>Bienvenue dans mon Univers</h1>
-        <p>Développeur, Créateur, écrivaine et Vendeur de solutions innovantes.</p>
+        <p>Développeur, Créatrice, écrivaine et Vendeuse de solutions innovantes.</p>
         <button class="btn-primary">Découvrir mes produits</button>
     </section>
 
     <!-- On ajoutera la boutique, les vidéos et la musique ici plus tard -->
+    <!-- ========================================== -->
+    <!-- SECTION BOUTIQUE (Livres, Perruques, etc.) -->
+    <!-- ========================================== -->
+    <section id="shop">
+        <h2 class="section-title">Ma Boutique</h2>
+        
+        <div class="shop-container">
 
+            <!-- PRODUIT 1 : TON ROMAN (Avec lien Amazon) -->
+            <div class="product-card">
+                <div class="media-container">
+                    <!-- Image par défaut (Tu remplaceras le lien par la couverture de ton livre) -->
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600" alt="Couverture du roman" class="product-img">
+                    <!-- Vidéo qui apparaît au survol (Tu mettras le lien de ta propre vidéo) -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop class="product-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                </div>
+                <div class="product-info">
+                    <h3>Mon Super Roman</h3>
+                    <p class="price">15,99 €</p>
+                    <!-- Lien vers Amazon : target="_blank" permet d'ouvrir dans un nouvel onglet -->
+                    <a href="https://www.amazon.fr/ton-livre" target="_blank">
+                        <button class="btn-buy">Acheter sur Amazon</button>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUIT 2 : PERRUQUE -->
+            <div class="product-card">
+                <div class="media-container">
+                    <!-- Image de la perruque -->
+                    <img src="https://images.unsplash.com/photo-1519713958759-6254243c4a53?q=80&w=600" alt="Perruque de luxe" class="product-img">
+                    <!-- Vidéo de démonstration de la perruque -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop class="product-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                </div>
+                <div class="product-info">
+                    <h3>Perruque Luxe Lisse</h3>
+                    <p class="price">120,00 €</p>
+                    <button class="btn-buy">Ajouter au panier</button>
+                </div>
+            </div>
+
+            <!-- PRODUIT 3 : VÊTEMENTS -->
+            <div class="product-card">
+                <div class="media-container">
+                    <!-- Image du vêtement -->
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600" alt="Vêtement" class="product-img">
+                    <!-- Vidéo de démonstration -->
+                    <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop class="product-video" onmouseover="this.play()" onmouseout="this.pause()"></video>
+                </div>
+                <div class="product-info">
+                    <h3>Robe Élégante</h3>
+                    <p class="price">45,00 €</p>
+                    <button class="btn-buy">Ajouter au panier</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
