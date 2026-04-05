@@ -756,3 +756,167 @@ nav {
     background: #b000ff;
     border-radius: 10px;
 }
+
+/* ========================================== */
+/* FENÊTRE DE CONNEXION (MODAL)               */
+/* ========================================== */
+
+/* Le fond noir flou qui recouvre tout le site */
+#login-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px); /* Flou puissant */
+    z-index: 10000; /* Doit être au-dessus de TOUT (même de la musique) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animation d'apparition */
+    opacity: 0;
+    pointer-events: none; /* Inactif par défaut */
+    transition: opacity 0.4s ease;
+}
+
+/* Quand le JavaScript ajoute la classe "active", le modal apparaît */
+#login-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* La boîte de connexion en verre */
+.login-box {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(176, 0, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 400px;
+    text-align: center;
+    overflow: hidden; /* Empêche le laser de sortir de la boîte */
+    transform: translateY(-50px);
+    transition: transform 0.4s ease;
+}
+
+/* Le modal descend légèrement quand il apparaît */
+#login-modal.active .login-box {
+    transform: translateY(0);
+}
+
+/* La croix pour fermer */
+#close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#close-modal:hover {
+    color: #ff007f; /* Devient rose au survol */
+    transform: scale(1.2) rotate(90deg);
+}
+
+/* Titres */
+.login-title {
+    color: #00f3ff;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.login-subtitle {
+    color: #a0a0a0;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* --- MAGIE DES CHAMPS DE SAISIE (Inputs flotants) --- */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    background: transparent; /* Fond invisible */
+    transition: 0.3s;
+}
+
+/* L'étiquette (ex: "Adresse Email") */
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: #a0a0a0;
+    pointer-events: none; /* Pour pouvoir cliquer sur le champ au travers du texte */
+    transition: 0.3s ease all;
+}
+
+/* Quand on clique sur le champ (focus) OU qu'il y a du texte (valid) : 
+   La bordure devient violette, et le texte monte en haut (lévitation) ! */
+.input-group input:focus,
+.input-group input:valid {
+    border-bottom-color: #b000ff;
+    box-shadow: 0 10px 10px -10px rgba(176, 0, 255, 0.5);
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #00f3ff; /* Le texte flottant devient bleu néon */
+}
+
+/* Petit texte en bas */
+.switch-form {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.switch-form a {
+    color: #b000ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-form a:hover {
+    color: #00f3ff;
+    text-decoration: underline;
+}
+
+/* --- LIGNE LASER (Scanner) --- */
+.scanner-laser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 243, 255, 0.8);
+    box-shadow: 0 0 15px #00f3ff, 0 0 30px #b000ff;
+    animation: scan 4s linear infinite;
+}
+
+/* La ligne monte et descend à l'infini */
+@keyframes scan {
+    0% { top: -10%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+}

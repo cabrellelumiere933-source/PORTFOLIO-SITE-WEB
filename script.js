@@ -239,3 +239,29 @@ function typeEffect() {
 
 // On lance la machine à écrire au chargement de la page
 typeEffect();
+// ============================================
+// MAGIE DU PANNEAU DE CONNEXION (Modal)
+// ============================================
+
+// On va chercher le bouton du menu, le fond noir, et la croix
+const btnLoginMenu = document.querySelector('.btn-login');
+const loginModal = document.getElementById('login-modal');
+const closeModal = document.getElementById('close-modal');
+
+// 1. Quand on clique sur "Connexion" dans le menu
+btnLoginMenu.addEventListener('click', (event) => {
+    event.preventDefault(); // Empêche la page de sauter ou de recharger
+    loginModal.classList.add('active'); // Fait apparaître le panneau
+});
+
+// 2. Quand on clique sur la petite croix (X)
+closeModal.addEventListener('click', () => {
+    loginModal.classList.remove('active'); // Fait disparaître le panneau
+});
+
+// 3. (Astuce Pro) Si l'utilisateur clique sur le fond noir flou, ça ferme aussi !
+window.addEventListener('click', (event) => {
+    if (event.target === loginModal) {
+        loginModal.classList.remove('active');
+    }
+});

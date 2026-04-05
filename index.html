@@ -285,6 +285,44 @@
     <!-- L'élément audio (caché) -->
     <audio id="site-music"></audio>
 </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL DE CONNEXION (Popup Holographique)   -->
+    <!-- ========================================== -->
+    <div id="login-modal" class="modal-hidden">
+        
+        <!-- Le panneau en verre -->
+        <div class="login-box">
+            <!-- Le bouton pour fermer la fenêtre (une croix) -->
+            <span id="close-modal">&times;</span>
+            
+            <!-- Effet de scanner laser (design pur) -->
+            <div class="scanner-laser"></div>
+
+            <h2 class="login-title">Accès Système</h2>
+            <p class="login-subtitle">Identifiez-vous pour entrer dans l'univers.</p>
+
+            <form id="login-form">
+                <!-- Champ Email -->
+                <div class="input-group">
+                    <!-- 'required' empêche de valider si c'est vide -->
+                    <input type="email" id="email" required>
+                    <!-- Le label va léviter grâce au CSS ! -->
+                    <label for="email">Adresse Électronique</label>
+                </div>
+
+                <!-- Champ Mot de passe -->
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Code Secret</label>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Initialiser la connexion 🚀</button>
+                
+                <p class="switch-form">Nouvelle recrue ? <a href="#">Créer un profil</a></p>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
