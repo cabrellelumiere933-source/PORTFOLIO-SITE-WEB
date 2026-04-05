@@ -265,3 +265,37 @@ window.addEventListener('click', (event) => {
         loginModal.classList.remove('active');
     }
 });
+
+// ============================================
+// MAGIE DU MODE CLAIR / SOMBRE (Dark/Light Mode)
+// ============================================
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+if (themeToggleBtn) {
+    // 1. Vérifier si l'utilisateur avait déjà choisi le mode clair lors de sa dernière visite
+    const currentTheme = localStorage.getItem('theme');
+    
+    // Si la mémoire dit "light", on active le mode clair et on met l'icône Lune
+    if (currentTheme === 'light') {
+        body.classList.add('light-theme');
+        themeToggleBtn.textContent = '🌙';
+    }
+
+    // 2. Quand on clique sur le bouton
+    themeToggleBtn.addEventListener('click', () => {
+        // On ajoute ou on enlève la classe "light-theme" sur le body
+        body.classList.toggle('light-theme');
+        
+        // Si le body a maintenant la classe "light-theme"
+        if (body.classList.contains('light-theme')) {
+            themeToggleBtn.textContent = '🌙'; // On affiche la lune pour proposer de revenir au sombre
+            localStorage.setItem('theme', 'light'); // On sauvegarde le choix dans la mémoire
+        } 
+        // Sinon (on est de retour en mode sombre)
+        else {
+            themeToggleBtn.textContent = '☀️'; // On affiche le soleil
+            localStorage.setItem('theme', 'dark'); // On sauvegarde le choix
+        }
+    });
+}
