@@ -1121,3 +1121,302 @@ body.light-theme .galaxie-card { background: rgba(0, 0, 0, 0.03); border-color: 
 body.light-theme .galaxie-card:hover { background: rgba(0, 0, 0, 0.05); }
 body.light-theme .galaxie-card h4 { color: #b000ff; }
 body.light-theme .galaxie-card p { color: #4a4a5a; }
+/* ========================================== */
+/* EFFET HOLOGRAPHIQUE "LA GALAXIE" (MENU)    */
+/* ========================================== */
+
+/* Le conteneur du lien */
+.menu-galaxie-container {
+    position: relative; /* Indispensable pour garder le message sous le lien */
+}
+
+/* Le lien normal, prêt à briller */
+.galaxie-link {
+    transition: 0.3s ease;
+}
+
+/* Quand on survole le lien, le texte s'illumine */
+.menu-galaxie-container:hover .galaxie-link {
+    color: #b000ff !important;
+    text-shadow: 0 0 10px rgba(176, 0, 255, 0.8), 0 0 20px rgba(0, 243, 255, 0.8);
+}
+
+/* --- LA BOÎTE DU MESSAGE (Cachée par défaut) --- */
+.hologram-tooltip {
+    position: absolute;
+    top: 180%; /* Place la boîte sous le menu */
+    left: 50%;
+    /* L'effet 3D est ici : La boîte est tournée en arrière (rotateX) et rétrécie */
+    transform: translateX(-50%) translateY(20px) perspective(500px) rotateX(-30deg);
+    width: 320px;
+    background: rgba(15, 15, 19, 0.85);
+    border: 1px solid rgba(0, 243, 255, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(176, 0, 255, 0.2);
+    backdrop-filter: blur(15px);
+    
+    /* Animation ultra-fluide avec effet "Rebond" */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    z-index: 1000;
+}
+
+/* La petite flèche lumineuse pointant vers le menu */
+.hologram-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 243, 255, 0.8) transparent;
+}
+
+/* --- LE DÉCLENCHEUR --- */
+/* QUAND ON FROLE LE LIEN : La boîte se redresse en 3D et apparaît */
+.menu-galaxie-container:hover .hologram-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) perspective(500px) rotateX(0deg);
+}
+
+/* --- LE LASER DE SCAN --- */
+.hologram-scanline {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: #00f3ff;
+    box-shadow: 0 0 15px #00f3ff, 0 0 30px #b000ff;
+    opacity: 0.8;
+    animation: scanHolo 2.5s linear infinite;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@keyframes scanHolo {
+    0% { top: 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* --- LE DESIGN DU TEXTE --- */
+.hologram-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+}
+
+.holo-title {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    color: #b000ff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 8px;
+    text-shadow: 0 0 5px rgba(176, 0, 255, 0.5);
+}
+
+.hologram-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    /* Un texte couleur métallique/étoilé */
+    background: linear-gradient(90deg, #ffffff, #a0a0a0, #00f3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 3s linear infinite;
+}
+
+@keyframes textShine {
+    to { background-position: 200% center; }
+}
+
+/* --- COMPATIBILITÉ MODE CLAIR --- */
+body.light-theme .hologram-tooltip {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #b000ff;
+    box-shadow: 0 10px 40px rgba(176, 0, 255, 0.3);
+}
+body.light-theme .hologram-tooltip::before {
+    border-color: transparent transparent #b000ff transparent;
+}
+body.light-theme .hologram-content p {
+    background: linear-gradient(90deg, #1a1a24, #b000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* ========================================== */
+/* MODE CLAIR - PANNEAU DE CONNEXION (Modal)  */
+/* ========================================== */
+
+/* Le fond flou derrière le modal */
+body.light-theme #login-modal {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* La boîte de connexion en verre */
+body.light-theme .login-box {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(176, 0, 255, 0.3);
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.2), 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* La croix pour fermer */
+body.light-theme #close-modal {
+    color: #1a1a24;
+}
+
+body.light-theme #close-modal:hover {
+    color: #ff007f;
+}
+
+/* Les titres */
+body.light-theme .login-title {
+    color: #b000ff;
+}
+
+body.light-theme .login-subtitle {
+    color: #4a4a5a;
+}
+
+/* Les champs de saisie (inputs) */
+body.light-theme .input-group input {
+    color: #1a1a24;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .input-group label {
+    color: #6a6a7a;
+}
+
+/* Quand on clique sur le champ ou qu'il y a du texte */
+body.light-theme .input-group input:focus,
+body.light-theme .input-group input:valid {
+    border-bottom-color: #b000ff;
+    box-shadow: 0 10px 10px -10px rgba(176, 0, 255, 0.3);
+}
+
+body.light-theme .input-group input:focus ~ label,
+body.light-theme .input-group input:valid ~ label {
+    color: #b000ff;
+}
+
+/* Le texte en bas "Nouvelle recrue ?" */
+body.light-theme .switch-form {
+    color: #4a4a5a;
+}
+
+body.light-theme .switch-form a {
+    color: #b000ff;
+}
+
+body.light-theme .switch-form a:hover {
+    color: #00f3ff;
+}
+
+/* Le laser de scan */
+body.light-theme .scanner-laser {
+    background: rgba(176, 0, 255, 0.8);
+    box-shadow: 0 0 15px #b000ff, 0 0 30px #00f3ff;
+}
+
+/* Le bouton principal dans le modal */
+body.light-theme .login-box .btn-primary {
+    background: #b000ff;
+    color: white;
+}
+
+body.light-theme .login-box .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(176, 0, 255, 0.6);
+}
+/* ========================================== */
+/* MODE CLAIR - LECTEUR DE MUSIQUE FLOTTANT   */
+/* ========================================== */
+
+/* Le conteneur principal du lecteur */
+body.light-theme #floating-player {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #b000ff;
+    box-shadow: 0 0 20px rgba(176, 0, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* La pochette de l'album */
+body.light-theme .disk-cover img {
+    border: 3px solid #b000ff;
+    box-shadow: 0 0 15px rgba(176, 0, 255, 0.3);
+}
+
+/* Infos sur la musique en cours */
+body.light-theme .now-playing h4 {
+    color: #b000ff;
+    text-shadow: none;
+}
+
+body.light-theme .now-playing p {
+    color: #4a4a5a;
+}
+
+/* Les boutons de contrôle (Précédent, Play, Suivant) */
+body.light-theme .player-controls button {
+    background: transparent;
+    border: 1px solid #b000ff;
+    color: #b000ff;
+}
+
+body.light-theme .player-controls button:hover {
+    background: #b000ff;
+    color: white;
+    box-shadow: 0 0 10px rgba(176, 0, 255, 0.5);
+}
+
+/* La barre de volume */
+body.light-theme .volume-container {
+    color: #1a1a24;
+}
+
+body.light-theme .volume-container input {
+    accent-color: #b000ff;
+}
+
+/* La playlist */
+body.light-theme .playlist {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .playlist li {
+    color: #1a1a24;
+}
+
+body.light-theme .playlist li:hover {
+    background: rgba(176, 0, 255, 0.1);
+}
+
+body.light-theme .playlist li.active {
+    background: rgba(176, 0, 255, 0.2);
+    color: #b000ff;
+}
+
+body.light-theme .song-artist {
+    color: #6a6a7a;
+}
+
+/* La scrollbar de la playlist */
+body.light-theme .playlist::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .playlist::-webkit-scrollbar-thumb {
+    background: #b000ff;
+}
+
+body.light-theme .playlist::-webkit-scrollbar-thumb:hover {
+    background: #00f3ff;
+}
