@@ -1023,15 +1023,15 @@ body.light-theme .badge {
     color: #1a1a24;
 }
 /* ========================================== */
-/* SECTION HUB NUMÉRIQUE (Liens et Ressources)*/
+/* SECTION GALAXIE (Ressources et Liens)      */
 /* ========================================== */
-#hub {
+#galaxie {
     padding: 100px 20px;
     background-color: #050505;
     text-align: center;
 }
 
-.hub-category {
+.galaxie-category {
     margin-bottom: 50px;
     text-align: left;
     max-width: 1200px;
@@ -1047,33 +1047,32 @@ body.light-theme .badge {
 }
 
 /* La piste de défilement horizontal (Le style Netflix) */
-.hub-track {
+.galaxie-track {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding: 10px 20px 30px 20px; /* Espace pour l'ombre et la scrollbar */
+    padding: 10px 20px 30px 20px;
     scroll-behavior: smooth;
-    /* Fait en sorte que les cartes "s'enclenchent" bien au défilement (sur mobile) */
     scroll-snap-type: x mandatory; 
 }
 
 /* Design des cartes de liens */
-.hub-card {
+.galaxie-card {
     position: relative;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 30px 20px;
-    min-width: 300px; /* Largeur fixe de la carte */
-    text-decoration: none; /* Enlève le soulignement du lien */
+    min-width: 300px;
+    text-decoration: none;
     color: #fff;
     transition: 0.4s ease;
-    scroll-snap-align: start; /* Aimante la carte lors du défilement */
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
 }
 
-.hub-card:hover {
+.galaxie-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.05);
     border-color: #b000ff;
@@ -1091,35 +1090,34 @@ body.light-theme .badge {
     text-transform: uppercase;
 }
 
-/* Couleurs des badges avec effets néon */
 .tag.free { background: rgba(0, 255, 100, 0.1); color: #00ff64; border: 1px solid #00ff64; }
 .tag.paid { background: rgba(255, 0, 100, 0.1); color: #ff0064; border: 1px solid #ff0064; }
 .tag.freemium { background: rgba(0, 243, 255, 0.1); color: #00f3ff; border: 1px solid #00f3ff; }
 
-.hub-card h4 {
+.galaxie-card h4 {
     font-size: 22px;
     margin-bottom: 10px;
     color: #00f3ff;
 }
 
-.hub-card p {
+.galaxie-card p {
     font-size: 14px;
     color: #a0a0a0;
     line-height: 1.5;
 }
 
-/* Design de la scrollbar pour le Hub */
-.hub-track::-webkit-scrollbar { height: 8px; }
-.hub-track::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
-.hub-track::-webkit-scrollbar-thumb { background: #00f3ff; border-radius: 10px; }
-.hub-track::-webkit-scrollbar-thumb:hover { background: #b000ff; }
+/* Design de la scrollbar pour la Galaxie */
+.galaxie-track::-webkit-scrollbar { height: 8px; }
+.galaxie-track::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+.galaxie-track::-webkit-scrollbar-thumb { background: #00f3ff; border-radius: 10px; }
+.galaxie-track::-webkit-scrollbar-thumb:hover { background: #b000ff; }
 
 /* ========================================== */
 /* AJUSTEMENT POUR LE MODE CLAIR (Light Mode) */
 /* ========================================== */
-body.light-theme #hub { background: #e8e8f0; }
+body.light-theme #galaxie { background: #e8e8f0; }
 body.light-theme .category-title { color: #1a1a24; }
-body.light-theme .hub-card { background: rgba(0, 0, 0, 0.03); border-color: rgba(0, 0, 0, 0.1); color: #1a1a24; }
-body.light-theme .hub-card:hover { background: rgba(0, 0, 0, 0.05); }
-body.light-theme .hub-card h4 { color: #b000ff; }
-body.light-theme .hub-card p { color: #4a4a5a; }
+body.light-theme .galaxie-card { background: rgba(0, 0, 0, 0.03); border-color: rgba(0, 0, 0, 0.1); color: #1a1a24; }
+body.light-theme .galaxie-card:hover { background: rgba(0, 0, 0, 0.05); }
+body.light-theme .galaxie-card h4 { color: #b000ff; }
+body.light-theme .galaxie-card p { color: #4a4a5a; }
